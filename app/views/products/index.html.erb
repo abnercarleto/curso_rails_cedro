@@ -1,0 +1,20 @@
+<h1>Lista de produtos</h1>
+
+<table>
+  <tr>
+    <td>Nome</td>
+    <td>Quantidade</td>
+    <td>Valor unitário</td>
+    <td></td>
+  </tr>
+  <% @products.each do |product| %>
+    <tr>
+      <td><%= product.name %></td>
+      <td><%= product.amount %></td>
+      <td><%= product.unit_price %></td>
+      <td><%= link_to 'Detalhes', product_path(product) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Novo produto', new_product_path %>
