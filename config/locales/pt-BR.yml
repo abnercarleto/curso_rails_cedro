@@ -1,0 +1,21 @@
+pt-BR:
+  products:
+    index:
+      title: 'Lista de Produtos'
+      table:
+        headers:
+          name: Nome
+          amount: Quantidade
+          unit_price: Preço unitário
+          description: Descrição
+          technical_details: Detalhes técnicos
+  activerecord:
+    models:
+      product: Produto
+    attributes:
+      product:
+        name: Nome
+        amount: Quantidade
+        unit_price: Preço unitário
+        description: Descrição
+        technical_details: Detalhes técnicos

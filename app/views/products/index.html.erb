@@ -1,10 +1,10 @@
-<h1>Lista de produtos</h1>
+<h1><%= I18n.t 'products.index.title' %></h1>
 
 <table>
   <tr>
-    <td>Nome</td>
-    <td>Quantidade</td>
-    <td>Valor unitário</td>
+    <td><%= I18n.t 'products.index.table.headers.name' %></td>
+    <td><%= I18n.t 'products.index.table.headers.amount' %></td>
+    <td><%= I18n.t 'products.index.table.headers.unit_price' %></td>
     <td></td>
   </tr>
   <% @products.each do |product| %>
@@ -12,7 +12,12 @@
       <td><%= product.name %></td>
       <td><%= product.amount %></td>
       <td><%= product.unit_price %></td>
-      <td><%= link_to 'Detalhes', product_path(product) %></td>
+      <td>
+        <%= link_to 'Detalhes', product_path(product) %>
+        <%= link_to 'Editar', edit_product_path(product) %>
+        <%= link_to 'Excluir', product_path(product),
+          method: :delete, data: { confirm: 'Você esta certo disso?' } %>
+      </td>
     </tr>
   <% end %>
 </table>
